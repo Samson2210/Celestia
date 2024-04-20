@@ -8,10 +8,8 @@ import Educational from './Components/Educational';
 import Satellite from './Components/Satellite';
 // import Satellite from './Satellite';
 // import Space from './Space';
-import { Canvas } from '@react-three/fiber'
-import { Environment, OrbitControls } from '@react-three/drei'
-import Earth from './Earth'
 
+import SatelliteTracking from './Components/SatelliteTracking';
 
 
 function App() {
@@ -78,6 +76,7 @@ function App() {
           <Route path="/satellite" element={<Satellite />} />
         </Routes>
       </Router>
+
     </>
   )
 }

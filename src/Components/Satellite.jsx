@@ -1,23 +1,14 @@
-import React from 'react'
-import { useState, Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Environment, OrbitControls } from '@react-three/drei'
-import Earth from '../Earth'
-
+import React, { useRef } from 'react';
+import SatelliteTracking from './SatelliteTracking';
 const Satellite = () => {
-  return (
-    <>
-    <h1>Satellite</h1>
-    <Canvas>
-    <ambientLight/>
-    <OrbitControls/>
-    <Suspense fallback={null}>
-    <Earth/>
-    </Suspense>
-    {/* <Environment preset='sunset'/> */}
-    </Canvas>
-    </>
-  )
-}
 
-export default Satellite
+
+  return (
+    <div className='flex bg-[#000011]'>
+    <SatelliteTracking/>
+    <div className='z-10 text-white'>Satellite</div>
+    </div>
+  );
+};
+
+export default Satellite;
