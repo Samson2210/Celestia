@@ -17,20 +17,7 @@ function App() {
 
   return (
     <>
-      {/* <Canvas>
-      <ambientLight/>
-      <OrbitControls/>
-      <Suspense fallback={null}>
-        <Earth/>
-      </Suspense>
-      <Environment preset='sunset'/>
-    </Canvas> */}
-
-
       <Router>
-
-
-
         <nav className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -57,7 +44,7 @@ function App() {
                   </div>
                 </div>
               </div>
-          
+
             </div>
           </div>
           <div className="sm:hidden" id="mobile-menu">
