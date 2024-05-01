@@ -1,3 +1,4 @@
+//For home page : Featured News
 import React from 'react';
 
 const NewsBox = () => {
