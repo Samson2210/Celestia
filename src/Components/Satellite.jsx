@@ -5,6 +5,7 @@ import Iss from './Iss';
 import { OrbitControls,Text,ScrollControls } from '@react-three/drei';
 import '../App.css'
 import SatelliteInfo from './SatelliteInfo';
+import SatelliteTypes from './SatelliteType';
 
 const Satellite = () => {
 
@@ -38,6 +39,7 @@ const Satellite = () => {
         </p>
       </div>
       <SatelliteInfo/>
+      {/* <SatelliteTypes/> */}
     </div>
   );
 };
