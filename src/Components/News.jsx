@@ -1,8 +1,17 @@
 import React from 'react'
+import NewsScroll from './NewsScroll'
+import NewsSlider from './NewsSlider'
+
 
 const News = () => {
+
   return (
-    <div>News</div>
+    <>
+    <div >
+        <NewsSlider />
+        <NewsScroll/>
+    </div>
+    </>
   )
 }
 
