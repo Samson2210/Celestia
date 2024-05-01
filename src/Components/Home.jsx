@@ -5,6 +5,7 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import { TopSection } from './TopSection'
 import ImgOD from './ImagOD'
+import NewsBox from './NewsBox'
 
 
 
@@ -39,6 +40,7 @@ useEffect(() => {
     </Canvas>
     </div>
     <ImgOD/>
+    <NewsBox/>
     </>
   )
 }
