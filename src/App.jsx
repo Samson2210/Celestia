@@ -8,7 +8,7 @@ import Educational from './Components/Educational';
 import Satellite from './Components/Satellite';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-
+import News from './Components/News';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/educational" element={<Educational />} />
+          <Route path="/news" element={<News />} />
           <Route path="/satellite" element={<Satellite />} />
         </Routes>
       </Router>

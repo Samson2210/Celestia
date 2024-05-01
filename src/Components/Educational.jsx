@@ -24,6 +24,7 @@ const Educational = () => {
   }, []);
 
   return (
+    <>
     <div  ref={containerRef} style={{ width: "100%", height: "100%" }}>
     <EduTopSection/>
     <Canvas >
@@ -31,8 +32,9 @@ const Educational = () => {
         <Robot scale={2.4}/>
       </Suspense>
     </Canvas>
-    <EduContainer/>
     </div>
+    <EduContainer/>
+    </>
   )
 }
 
