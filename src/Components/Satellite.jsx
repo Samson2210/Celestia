@@ -39,7 +39,7 @@ const Satellite = () => {
         </p>
       </div>
       <SatelliteInfo/>
-      <SatelliteTypes/>
+      {/* <SatelliteTypes/> */}
     </div>
   );
 };
