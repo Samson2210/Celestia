@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const apiKey = process.env.REACT_APP_API_KEY;
 export default function ImgOD() {
     const [apodData, setApodData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ export default function ImgOD() {
             try {
                 const response = await axios.get('https://api.nasa.gov/planetary/apod', {
                     params: {
-                        api_key: 'gNaPZYBFMzmiv0XE8AiBrZuFf4kyZ9bYTemhVp0k',
+                        api_key: apiKey,
                     },
                 });
                 setApodData(response.data);
