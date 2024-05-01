@@ -116,6 +116,8 @@ const Iss =(props)=> {
   //     <mesh geometry={nodes.iss_iss_dc_iss_dc_with_Tex_0.geometry} material={materials.iss_dc_with_Tex} position={[7.014, 0, -3.774]} />
   //   </group>
   // )
+
+
   const gltf = useLoader(GLTFLoader, "./iss.gltf");
   return <primitive object={gltf.scene} scale={1} position={[-7, 0, -1]} rotation={[0.5,0,0]}/>;
 }
