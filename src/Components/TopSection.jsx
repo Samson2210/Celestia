@@ -10,7 +10,10 @@ export function TopSection() {
       <p className="m-2 px-2 text-center md:mt-2 text-white text-sm md:text-lg font-medium leading-6 max-w-3xl ">
         You can help us cool off our world and have it go back to its best state ever by donating to help fix our only world and our beloved EARTH! Be cool and let the earth be cool. Let the icebergs live. The globe is warming and will set to fire. Stop polluting; it will cost extra.
       </p>
+      <Link to={{ pathname: "https://babylon-test.onrender.com" }} target="_blank">
       <button className="md:mt-8 px-8 py-3 bg-green-600 text-white text-sm md:text-lg font-semibold rounded-lg transition duration-300 ease-in-out hover:bg-transparent hover:border-2 hover:border-green-600 focus:outline-none focus:border-green-600">Explore Virtual Planetarium</button>
+      </Link >
+      
       {/* <h3 className="text-white fixed bottom-0 left-1/2 transform -translate-x-1/2"> */}
       {/*   <u>Made By:</u> Islem Maboud */}
       {/* </h3> */}
