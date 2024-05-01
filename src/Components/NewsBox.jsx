@@ -1,91 +1,67 @@
-//For home page : Featured News
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import defaultImg from '../assets/Edu_Images/default.jpg';
+import { Link } from 'react-router-dom';
 
 const NewsBox = () => {
+    const [articles, setArticles] = useState([]);
+    const [index, setIndex] = useState(0);
 
-    function fetchAndDisplayArticles(startIndex) {
-        fetch(
-            "https://api.spaceflightnewsapi.net/v4/articles/?format=json&is_featured=true"
-        )
-            .then((response) => response.json())
-            .then((data) => {
+    useEffect(() => {
+        const fetchArticles = async () => {
+            try {
+                const response = await fetch(
+                    "https://api.spaceflightnewsapi.net/v4/articles/?format=json&is_featured=true"
+                );
+                const data = await response.json();
+                setArticles(data.results);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
 
-                const totalArticles = data.results.length;
-                console.log("Total number of articles:", totalArticles);
+        fetchArticles();
+    }, []);
 
-                startIndex = startIndex % totalArticles;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 2) % articles.length);
+        }, 5000);
 
-                const article1 = data.results[startIndex];
-                const article2 = data.results[(startIndex + 1) % totalArticles];
+        return () => clearInterval(interval);
+    }, [articles]);
 
-                const defaultImageUrl = "default.jpg";
-                function isImageUrlValid(url) {
-                    return /\.(png|jpg|jpeg)$/i.test(url);
-                }
-
-                document.getElementById("card-img1").src = isImageUrlValid(article1.image_url) ? article1.image_url : defaultImageUrl;
-                document.getElementById("title1").innerText = article1.title;
-                document.getElementById("site1").innerText = article1.news_site;
-                document.getElementById("article-link1").onclick = function () {
-                    window.location.href = article1.url;
-                }
-                const publishedDate1 = new Date(article1.published_at);
-                const formattedDate1 = publishedDate1.toLocaleDateString();
-                document.getElementById("date1").innerText = formattedDate1;
-
-                document.getElementById("card-img2").src = isImageUrlValid(article2.image_url) ? article2.image_url : defaultImageUrl;
-                document.getElementById("title2").innerText = article2.title;
-                document.getElementById("site2").innerText = article2.news_site;
-                document.getElementById("article-link2").onclick = function () {
-                    window.location.href = article2.url;
-                }
-                const publishedDate2 = new Date(article2.published_at);
-                const formattedDate2 = publishedDate2.toLocaleDateString();
-                document.getElementById("date2").innerText = formattedDate2;
-
-            })
-            .catch((error) => console.error("Error fetching data:", error));
-    }
-
-    fetchAndDisplayArticles(0);
-
-    setInterval(() => {
-        fetchAndDisplayArticles((startIndex += 2));
-    }, 6500); //6500=6.5 secs
-
-    let startIndex = 2;
+    const handleClick = (url) => {
+        window.open(url, '_blank');
+    };
 
     return (
-        <div class="mt-20 mb-60 mx-4">
-            <h1 class="text-4xl font-bold mb-8 pb-8">Featured News</h1>
+        <div className="mt-20 mb-50 mx-4">
+            <h1 className="text-4xl text-center md:text-left md:ml-5 font-bold mb-8 pb-8">Featured News</h1>
+            <div className="flex flex-col md:flex-row mx-auto justify-center md:justify-evenly ">
+                {articles.slice(index, index + 2).map((article, idx) => (
+                    <div key={idx} className="w-full md:w-2/5 min-w-80  bg-white border border-gray-200 rounded-md shadow-md overflow-hidden  mb-8 md:mb-0 transform transition duration-500 hover:scale-105">
+                        <img
+                            className="w-full h-56 object-cover"
+                            src={article.image_url || defaultImg}
+                            onError={(e) => { e.target.onerror = null; e.target.src = defaultImg }}
+                            alt="Card Image"
+                        />
+                        <div className="p-4">
+                            <h1 className="text-lg font-bold mb-2 truncate">{article.title}</h1>
+                            <div className="flex justify-between text-sm text-gray-500 mb-2">
+                                <h5 className="font-medium">{article.news_site}</h5>
+                                <h5 className="font-medium">{new Date(article.published_at).toLocaleDateString()}</h5>
+                            </div>
+                            <button className="float-right bg-black text-white rounded-md px-4 my-5 py-2 mx-auto block" onClick={() => handleClick(article.url)}>Read Full Article</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
             <div className="flex justify-center">
-
-                <div className="w-2/5 min-w-80 min-h-cardHeight max-h-cardHeight bg-white border border-gray-200 rounded-md shadow-md overflow-hidden mx-4">
-                    <img className="w-full h-3/5 object-cover" id="card-img1" src="src/assets/Edu_Images/default.jpg" alt="Card Image" />
-                    <div className="p-4">
-                        <h1 className="text-lg font-bold mb-2" id="title1">Title</h1>
-                        <div className="flex justify-between text-sm text-gray-500 mb-2">
-                            <h5 className="font-medium" id="site1">Site</h5>
-                            <h5 className="font-medium" id="date1">Published on</h5>
-                        </div>
-                        <button className="bg-black text-white rounded-md px-4 py-2 mx-auto block" id="article-link1" onclick="redirectToPage()">Full article</button>
-                    </div>
-                </div>
-
-                <div className="w-2/5 min-w-80 min-h-cardHeight max-h-cardHeight bg-white border border-gray-200 rounded-md shadow-md overflow-hidden mx-4">
-                    <img className="w-full h-3/5 object-cover" id="card-img2" src="src/assets/Edu_Images/default.jpg" alt="Card Image" />
-                    <div className="p-4">
-                        <h1 className="text-lg font-bold mb-2" id="title2">Title</h1>
-                        <div className="flex justify-between text-sm text-gray-500 mb-2">
-                            <h5 className="font-medium" id="site2">Site</h5>
-                            <h5 className="font-medium" id="date2">Published on</h5>
-                        </div>
-                        <button className="bg-black text-white rounded-md px-4 py-2 mx-auto block" id="article-link2" onclick="redirectToPage()">Full article</button>
-                    </div>
-                </div>
+                <Link to='/news' className="bg-black text-white rounded-md px-5 py-3 mt-8 mb-20 hover:bg-gray-800  transition duration-300 transform hover:scale-105">Read More News</Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default NewsBox
+export default NewsBox;
