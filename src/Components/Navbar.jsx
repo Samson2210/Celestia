@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import calestia from '/celestia.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex items-center space-x-2">
+              <span><img src={calestia} className='h-10 w-11' alt="calestia" /></span>
               <span className="text-white font-bold text-xl">Celestia</span>
             </div>
             <div className="hidden md:block">
