@@ -36,11 +36,11 @@ const ImagOD = () => {
                         <div id="left-section" className="md:text-left md:w-1/2 px-5 text-justify">
                             <p className="text-2xl font-bold mb-4">T O D A Y</p>
                             <h1 className="text-4xl font-bold mb-4">Image Of The Day</h1>
-                            <h3 className="text-xl font-semibold mb-4">{apodData.title}</h3>
-                            <p className="text-lg">{apodData.explanation}</p>
+                            <h3 className="text-xl font-semibold mb-4 ">{apodData.title}</h3>
+                            <p className="text-lg text-justify">{apodData.explanation}</p>
                         </div>
                         <div id="img-section" className="px-2 md:w-1/2 mt-8 md:mt-0 md:h-1/3">
-                            <img src={apodData.url} alt={apodData.title} className="mx-auto rounded-md shadow-md" />
+                            <img src={apodData.url} alt={apodData.title} className="mx-auto rounded-md shadow-md  max-w-full h-auto" />
                         </div>
                     </>
                 )}
