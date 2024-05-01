@@ -16,7 +16,7 @@ const Footer = () => {
                         <span className="fab fa-instagram">Prapti</span>
                     </p>
                     <p href="#" className="text-gray-300 hover:text-white transition duration-300">
-                        <span className="fab fa-instagram">Smuthul</span>
+                        <span className="fab fa-instagram">Smruthul</span>
                     </p>
                     <p href="#" className="text-gray-300 hover:text-white transition duration-300">
                         <span className="fab fa-instagram">Samson</span>

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const apiKey = process.env.REACT_APP_API_KEY;
-export default function ImgOD() {
+
+
+
+const ImagOD = () => {
     const [apodData, setApodData] = useState(null);
     const [loading, setLoading] = useState(true);
-
+    const apiKey = process.env.REACT_APP_API_KEY;
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -45,3 +48,5 @@ export default function ImgOD() {
         </section>
     );
 }
+
+export default ImagOD
