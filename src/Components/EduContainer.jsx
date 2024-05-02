@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function PlanetCard({ planet }) {
   return (
-    <div className="planet-card bg-white rounded-lg overflow-hidden shadow-md flex flex-row w-full mb-8 ">
+    <div className="planet-card bg-white rounded-lg overflow-hidden shadow-md flex flex-row w-full mb-8 font-poppins font-semibold">
       <img src={`src/assets/Edu_Images/${planet.name.toLowerCase()}.jpg`} alt={`${planet.name} Image`} className="w-1/3 h-auto object-cover" />      
       <div className="planet-details flex flex-col justify-center p-4 w-2/3 ">
         
@@ -43,8 +43,8 @@ export function EduContainer() {
   };
     return (
     <>
-    <div id="scroll-target" className="w-10/12 max-w-3xl h-80vh left-4 bg-opacity-25 xl:mt-20 flex flex-col items-start justify-center pt-2 pl-8 z-10">
-      <h1 className="m-0 text-black font-extrabold mt-0 xl:mt-0 text-3xl md:text-5xl w-full mb-8">Explore Educational Content</h1>
+    <div id="scroll-target" className="w-10/12 max-w-3xl mx-auto h-80vh left-4 bg-opacity-25 xl:mt-20 flex flex-col items-start justify-center pt-2 pl-8 z-10">
+      <h1 className="m-0 text-black font-extrabold mt-0 xl:mt-0 text-3xl md:text-5xl w-full mb-8 font-poppins">Explore Educational Content</h1>
       <h3 className="text-black font-semibold mt-4 mb-3 text-xl md:text-2xl">Our Planets</h3>
       <div className="planet-container flex flex-wrap gap-8 justify-center items-center">        
         {planets.map((planet, index) => (

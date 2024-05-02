@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import defaultImg from "../assets/Edu_Images/default.jpg";
 
 function NewsCard({ article }) {
   const publishedDate = new Date(article.published_at);
@@ -15,16 +16,23 @@ function NewsCard({ article }) {
   };
 
   return (
-    <div className="card w-80 min-w-200 min-h-300 overflow-hidden border border-gray-200 shadow-md">
-      <img className="card-img w-full h-3/5 object-cover" src={imageUrl} alt="Article Image" />
-      <div className="card-body p-4 text-center">
-        <h1 className="card-title text-lg font-bold mb-2">{article.title}</h1>
+    <div className="card max-w-xs w-full min-w-200 min-h-300 overflow-hidden border border-gray-200 shadow-md rounded-md">
+      <img
+        className="card-img w-full h-40 object-cover"
+        src={imageUrl}
+        alt="Article Image"
+      />
+      <div className="card-body p-4">
+        <h1 className="card-title text-lg font-semibold mb-2">{article.title}</h1>
         <div className="card-details flex justify-between text-sm text-gray-500 mb-2">
           <h5 className="font-medium">{article.news_site || "Unknown Site"}</h5>
           <h5 className="font-medium">{formattedDate || "Unknown Date"}</h5>
         </div>
-        <button className="card-btn w-30 text-white bg-black rounded-md py-3 px-4" onClick={() => redirectToPage(article.url)}>
-          Full article
+        <button
+          className=" card-btn w-fit text-white bg-black rounded-md py-2 px-4 hover:bg-gray-800 transition-colors"
+          onClick={() => redirectToPage(article.url)}
+        >
+          Read More
         </button>
       </div>
     </div>
@@ -44,7 +52,7 @@ function NewsPage() {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center gap-20 max-w-1000 overflow-y-auto mt-10 mb-10">
+    <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto mt-10 mb-10">
       {articles.map((article, index) => (
         <NewsCard key={index} article={article} />
       ))}
