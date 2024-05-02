@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         'digital': ['digital', 'sans-serif'],  // after you font, add some fonts separated by commas to handle fallback.
+        "poppins": ['Poppins', 'sans-serif'] 
       }
     },
   },

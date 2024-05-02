@@ -20,11 +20,11 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <NavLink to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</NavLink>
-                <NavLink to="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Space</NavLink>
-                <NavLink to="/educational" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Educational</NavLink>
-                <NavLink to="/News" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</NavLink>
-                <NavLink to="/satellite" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Satellite</NavLink>
+                <NavLink to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Home</NavLink>
+                <NavLink to="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Space</NavLink>
+                <NavLink to="/educational" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Educational</NavLink>
+                <NavLink to="/News" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">News</NavLink>
+                <NavLink to="/satellite" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Satellite</NavLink>
               </div>
             </div>
           </div>
