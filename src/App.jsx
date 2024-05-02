@@ -9,6 +9,7 @@ import Satellite from './Components/Satellite';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import News from './Components/News';
+import Visit from './Components/Visit';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/educational" element={<Educational />} />
           <Route path="/news" element={<News />} />
+          <Route path="/visit" element={<Visit/>} />
           <Route path="/satellite" element={<Satellite />} />
         </Routes>
       </Router>

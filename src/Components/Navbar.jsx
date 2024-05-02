@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <NavLink to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Home</NavLink>
-                <NavLink to="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Space</NavLink>
+                <NavLink to="/visit" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Visit </NavLink>
                 <NavLink to="/educational" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Educational</NavLink>
                 <NavLink to="/News" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">News</NavLink>
                 <NavLink to="/satellite" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-1xl font-semibold ">Satellite</NavLink>
@@ -45,8 +45,9 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</NavLink>
-            <NavLink to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Space</NavLink>
+            <NavLink to="/visit" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Visit</NavLink>
             <NavLink to="/educational" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Eductional</NavLink>
+            <NavLink to="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</NavLink>
             <NavLink to="/satellite" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Satellite</NavLink>
           </div>
         </div>
