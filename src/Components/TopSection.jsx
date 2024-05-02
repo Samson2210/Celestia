@@ -12,7 +12,7 @@ export function TopSection() {
       </p>
 
       {/* LINK NEEDS TO BE REPLACED */}
-      <a href="https://babylon-test.onrender.com">
+      <a href="http://127.0.0.1:1338" target="_blank">
       <button className="md:mt-8 px-8 py-3 bg-green-600 text-white text-sm md:text-lg font-semibold rounded-lg transition duration-300 ease-in-out hover:bg-transparent hover:border-2 hover:border-green-600 focus:outline-none focus:border-green-600">Explore Virtual Planetarium</button>
       </a >
       
