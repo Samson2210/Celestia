@@ -10,7 +10,7 @@ function SolarSystem() {
       <img src={solarSystemImage} alt="Solar System" className="w-full  h-1/2 md:h-auto object-cover" />
       <div className="planet-action flex items-center justify-between p-4">
         <h3 className="text-lg font-semibold">Solar System</h3>
-        <button className="pic bg-black text-white px-4 py-2 rounded-lg">Visit</button>
+        <button className="pic bg-black text-white px-4 py-2 rounded-lg"><a href="https://celestia-solar-system.onrender.com" target='_blanl'>Visit</a></button>
       </div>
     </div>
   );
@@ -18,7 +18,7 @@ function SolarSystem() {
 
 function Planet({ name, image, link }) {
   return (
-    <div className="planet w-full md:w-64 h-64 border border-gray-300 shadow-md rounded-md m-8">
+    <div className="planet w-full md:w-64 h-64 border border-gray-300 shadow-md ">
       <img src={image} alt={`${name} Image`} className="w-full h-3/4 object-cover rounded-t-md" />
       <div className="planet-action flex justify-between items-center p-4">
         <h3 className='font-semibold'>{name}</h3>
